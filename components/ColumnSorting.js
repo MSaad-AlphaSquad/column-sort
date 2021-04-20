@@ -14,8 +14,9 @@ const ColumnSorting = (props) => {
   }
 
   useEffect(()=> {
-    if (search.length > 0){
-    const newData =  list.filter(item => item.project.includes(search));
+    const searchValue = _.startCase(_.toLower(search));
+    if (searchValue.length > 0){
+    const newData =  list.filter(item => item.project.includes(searchValue));
     setData(newData)
   }
   else{
